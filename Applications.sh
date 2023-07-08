@@ -30,10 +30,17 @@ if [ $choice -eq 1 ]; then
   sudo apt-get install x2goclient
   echo "X2go installed successfully."
 
-  sudo apt install software-properties-common apt-transport-https wget
-  wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-  sudo apt install code
-  echo "VS Code installed successfully."
+ # sudo apt install software-properties-common apt-transport-https wget
+ # wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+ # sudo apt install code
+ # echo "VS Code installed successfully."
+
+  DOWNLOAD_URL="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+  PACKAGE_NAME="vscode.deb"
+  wget -O "$PACKAGE_NAME" "$DOWNLOAD_URL"
+  sudo dpkg -i "$PACKAGE_NAME"
+  sudo apt-get install -f
+  echo "Visual Studio Code has been successfully installed."
 
   sudo apt install snapd -y
   sudo snap install notepad-plus-plus --classic
@@ -44,6 +51,7 @@ if [ $choice -eq 1 ]; then
 
 elif [ $choice -eq 2 ]; then
   # Removal
+  rm "$PACKAGE_NAME"
   sudo apt remove google-chrome-stable -y
   sudo snap remove whatsapp-for-linux
   sudo apt remove x2goclient -y
