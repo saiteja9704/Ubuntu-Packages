@@ -16,7 +16,10 @@ if [ $choice -eq 1 ]; then
   sudo apt update -y
   sudo apt install google-chrome-stable
   echo "Chrome installed successfully."
-
+ 
+  sudo snap install whatsapp-for-linux
+  echo " whatsapp installed successfully."
+  
   sudo apt-get install x2goclient
   echo "X2go installed successfully."
 
@@ -35,6 +38,7 @@ if [ $choice -eq 1 ]; then
 elif [ $choice -eq 2 ]; then
   # Removal
   sudo apt remove google-chrome-stable -y
+  sudo snap remove whatsapp-for-linux
   sudo apt remove x2goclient -y
   sudo apt remove code -y
   sudo snap remove notepad-plus-plus
