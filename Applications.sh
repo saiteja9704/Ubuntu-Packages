@@ -50,14 +50,24 @@ if [ $choice -eq 1 ]; then
   sudo apt upgrade -y
 
 elif [ $choice -eq 2 ]; then
-  # Removal
-  rm "$PACKAGE_NAME"
-  sudo apt remove google-chrome-stable -y
-  sudo snap remove whatsapp-for-linux
-  sudo apt remove x2goclient -y
-  sudo apt remove code -y
-  sudo snap remove notepad-plus-plus
-  echo "Packages removed successfully."
+ 
+# Removal
+sudo apt remove code -y
+sudo apt remove --purge google-chrome-stable -y
+sudo snap remove unofficial-webapp-todo
+sudo snap remove office365webdesktop
+sudo snap remove unofficial-webapp-fork
+sudo add-apt-repository -r ppa:linuxuprising/shutter -y
+sudo snap remove whatsapp-for-linux
+sudo apt-get remove --purge x2goclient -y
+sudo dpkg --remove vscode.deb
+sudo snap remove notepad-plus-plus
+
+# Cleanup
+sudo apt autoremove -y
+sudo apt autoclean
+
+echo "Packages removed successfully."
 
 else
   echo "Invalid choice. Exiting."
