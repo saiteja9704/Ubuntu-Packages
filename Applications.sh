@@ -20,7 +20,9 @@ if [ $choice -eq 1 ]; then
   sudo snap install unofficial-webapp-todo
   sudo snap install office365webdesktop --beta
   sudo snap install unofficial-webapp-fork
-   echo "0365 installed successfully."
+  echo "0365 installed successfully."
+  sudo add-apt-repository -y ppa:linuxuprising/shutter
+
  
   sudo snap install whatsapp-for-linux
   echo " whatsapp installed successfully."
