@@ -25,7 +25,7 @@ if [ $choice -eq 1 ]; then
   sudo dpkg -i google-chrome-stable_current_amd64.deb
   sudo apt -f install
   sudo apt update -y
-  sudo apt install google-chrome-stable -y
+  sudo apt install google-chrome-stable 
   echo "Chrome installed successfully."
  
   sudo snap install unofficial-webapp-todo 
