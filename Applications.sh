@@ -13,38 +13,31 @@ if [ $choice -eq 1 ]; then
   echo "gimp-paint installed successfully."
   
   sudo add-apt-repository ppa:achadwick/mypaint-testing
-  sudo apt-get update
-  sudo apt-get install mypaint
+  sudo apt-get update -y
+  sudo apt-get install mypaint -y
   echo "mypain installed successfully."
   
-  wget https://zoom.us/client/latest/zoom_amd64.deb
-  sudo apt install ./zoom_amd64.deb
+  wget https://zoom.us/client/latest/zoom_amd64.deb -y
+  sudo apt install ./zoom_amd64.deb -y
   echo "zoom installed successfully."
   
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   sudo dpkg -i google-chrome-stable_current_amd64.deb
   sudo apt -f install
   sudo apt update -y
-  sudo apt install google-chrome-stable
+  sudo apt install google-chrome-stable -y
   echo "Chrome installed successfully."
  
-  sudo snap install unofficial-webapp-todo
+  sudo snap install unofficial-webapp-todo -y
   sudo snap install office365webdesktop --beta
-  sudo snap install unofficial-webapp-fork
+  sudo snap install unofficial-webapp-fork -y
   echo "0365 installed successfully."
-  sudo add-apt-repository -y ppa:linuxuprising/shutter
-
- 
-  sudo snap install whatsapp-for-linux
+  
+  sudo snap install whatsapp-for-linux -y
   echo " whatsapp installed successfully."
   
-  sudo apt-get install x2goclient
+  sudo apt-get install x2goclient -y
   echo "X2go installed successfully."
-
- # sudo apt install software-properties-common apt-transport-https wget
- # wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
- # sudo apt install code
- # echo "VS Code installed successfully."
 
   DOWNLOAD_URL="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
   PACKAGE_NAME="vscode.deb"
@@ -66,7 +59,7 @@ elif [ $choice -eq 2 ]; then
 sudo apt remove code -y
 sudo apt remove gimp -y
 sudo apt-get remove mypaint  -y
-sudo apt remove gdebi -y
+sudo apt remove zoom_amd64.deb -y
 sudo apt remove zoom -y
 sudo apt remove --purge google-chrome-stable -y
 sudo snap remove unofficial-webapp-todo
