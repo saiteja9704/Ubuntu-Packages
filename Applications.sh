@@ -18,7 +18,7 @@ if [ $choice -eq 1 ]; then
   echo "mypain installed successfully."
   
   wget https://zoom.us/client/latest/zoom_amd64.deb -y
-  sudo apt install ./zoom_amd64.deb -y
+  sudo apt install ./zoom_amd64.deb 
   echo "zoom installed successfully."
   
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
