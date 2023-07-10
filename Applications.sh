@@ -10,9 +10,15 @@ if [ $choice -eq 1 ]; then
   sudo apt update -y
   sudo apt upgrade -y
   sudo apy install gimp -y
+  echo "gimp-paint installed successfully."
+  
   sudo add-apt-repository ppa:achadwick/mypaint-testing
   sudo apt-get update
   sudo apt-get install mypaint
+  echo "mypain installed successfully."
+  sudo apt install gdebi
+  sudo apt install ./zoom_amd64.deb
+  echo "zoom installed successfully."
   
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -58,7 +64,8 @@ elif [ $choice -eq 2 ]; then
 # Removal
 sudo apt remove code -y
 sudo apt remove gimp -y
-sudo apt-get remove mypaint -y
+sudo apt-get remove mypaint  -y
+sudo apt remove zoom -y
 sudo apt remove --purge google-chrome-stable -y
 sudo snap remove unofficial-webapp-todo
 sudo snap remove office365webdesktop
