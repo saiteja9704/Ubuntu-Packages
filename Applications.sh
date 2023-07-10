@@ -65,6 +65,7 @@ elif [ $choice -eq 2 ]; then
 sudo apt remove code -y
 sudo apt remove gimp -y
 sudo apt-get remove mypaint  -y
+sudo apt remove gdebi -y
 sudo apt remove zoom -y
 sudo apt remove --purge google-chrome-stable -y
 sudo snap remove unofficial-webapp-todo
