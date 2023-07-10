@@ -16,7 +16,8 @@ if [ $choice -eq 1 ]; then
   sudo apt-get update
   sudo apt-get install mypaint
   echo "mypain installed successfully."
-  sudo apt install gdebi
+  
+  wget https://zoom.us/client/latest/zoom_amd64.deb
   sudo apt install ./zoom_amd64.deb
   echo "zoom installed successfully."
   
