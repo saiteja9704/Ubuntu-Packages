@@ -9,12 +9,13 @@ if [ $choice -eq 1 ]; then
   # Installation
   sudo apt update -y
   sudo apt upgrade -y
-  sudo apy install gimp -y
+  sudo apt install vim 
+  sudo apy install gimp 
   echo "gimp-paint installed successfully."
   
   sudo add-apt-repository ppa:achadwick/mypaint-testing
   sudo apt-get update -y
-  sudo apt-get install mypaint -y
+  sudo apt-get install mypaint 
   echo "mypain installed successfully."
   
   wget https://zoom.us/client/latest/zoom_amd64.deb 
@@ -33,7 +34,7 @@ if [ $choice -eq 1 ]; then
   sudo snap install unofficial-webapp-fork 
   echo "0365 installed successfully."
   
-  sudo snap install whatsapp-for-linux -y
+  sudo snap install whatsapp-for-linux 
   echo " whatsapp installed successfully."
   
   sudo apt-get install x2goclient -y
@@ -56,18 +57,19 @@ if [ $choice -eq 1 ]; then
 elif [ $choice -eq 2 ]; then
  
 # Removal
-sudo apt remove code -y
-sudo apt remove gimp -y
-sudo apt-get remove mypaint  -y
+sudo apt remove code 
+sudo apt remove gimp 
+sudo apt remove vim 
+sudo apt-get remove mypaint  
 sudo apt remove zoom_amd64.deb 
-sudo apt remove zoom -y
-sudo apt remove --purge google-chrome-stable -y
+sudo apt remove zoom 
+sudo apt remove --purge google-chrome-stable 
 sudo snap remove unofficial-webapp-todo
 sudo snap remove office365webdesktop
 sudo snap remove unofficial-webapp-fork
-sudo add-apt-repository -r ppa:linuxuprising/shutter -y
+sudo add-apt-repository -r ppa:linuxuprising/shutter
 sudo snap remove whatsapp-for-linux
-sudo apt-get remove --purge x2goclient -y
+sudo apt-get remove --purge x2goclient 
 sudo dpkg --remove vscode.deb
 sudo snap remove notepad-plus-plus
 
