@@ -16,6 +16,10 @@ if [ $choice -eq 1 ]; then
   sudo apt update -y
   sudo apt install google-chrome-stable
   echo "Chrome installed successfully."
+ 
+  sudo add-apt-repository ppa:micahflee/ppa
+  sudo apt install torbrowser-launcher
+  echo "torbrowser installed successfully."
 
   sudo snap install unofficial-webapp-todo
   sudo snap install office365webdesktop --beta
