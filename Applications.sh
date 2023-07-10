@@ -9,7 +9,7 @@ if [ $choice -eq 1 ]; then
   # Installation
   sudo apt update -y
   sudo apt upgrade -y
-
+  sudo apy install gimp -y
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   sudo dpkg -i google-chrome-stable_current_amd64.deb
   sudo apt -f install
@@ -53,6 +53,7 @@ elif [ $choice -eq 2 ]; then
  
 # Removal
 sudo apt remove code -y
+sudo apt remove gimp -y
 sudo apt remove --purge google-chrome-stable -y
 sudo snap remove unofficial-webapp-todo
 sudo snap remove office365webdesktop
