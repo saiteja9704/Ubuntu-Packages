@@ -28,9 +28,9 @@ if [ $choice -eq 1 ]; then
   sudo apt install google-chrome-stable -y
   echo "Chrome installed successfully."
  
-  sudo snap install unofficial-webapp-todo -y
+  sudo snap install unofficial-webapp-todo 
   sudo snap install office365webdesktop --beta
-  sudo snap install unofficial-webapp-fork -y
+  sudo snap install unofficial-webapp-fork 
   echo "0365 installed successfully."
   
   sudo snap install whatsapp-for-linux -y
