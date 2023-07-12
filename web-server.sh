@@ -40,6 +40,7 @@ if [[ $choice == 1 ]]; then
 elif [[ $choice == 2 ]]; then
     # Option 2: Remove services
     echo "Removing Caddy..."
+    sudo systemctl stop caddy
     sudo remove install -y debian-keyring debian-archive-keyring apt-transport-https
     sudo apt remove -y caddy
     sudo rm /usr/share/keyrings/caddy-stable-archive-keyring.gpg
