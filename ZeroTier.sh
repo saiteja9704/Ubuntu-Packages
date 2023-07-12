@@ -31,10 +31,10 @@ sudo systemctl restart zerotier-one.service
 zerotier-one -d
 echo "Join a Blusapphire-ZeroTier network "
 zerotier-cli join 81b9052ecd4865a9
-zerotier.cli join 81b9052ecd4865a9
 sudo apt upgrade
 sudo apt update
 echo "ZeroTier has been installed."
+echo "zerotier.cli join 81b9052ecd4865a9"
 echo "zerotier-cli info or zerotier.cli info"
 
 elif [[ $choice == 2 ]]; then
