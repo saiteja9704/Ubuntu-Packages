@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "Select an option:"
 echo "1. Install services"
 echo "2. Remove services"
