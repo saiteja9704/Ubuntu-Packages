@@ -28,7 +28,14 @@ if [ $choice -eq 1 ]; then
   sudo apt update -y
   sudo apt install google-chrome-stable 
   echo "Chrome installed successfully."
- 
+
+  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+  sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+  sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+  sudo rm microsoft.gpg
+  sudo apt update && sudo apt install microsoft-edge-stable
+  echo "microsoft-edge installed successfully."
+  
   sudo snap install unofficial-webapp-todo 
   sudo snap install office365webdesktop --beta
   sudo snap install unofficial-webapp-fork 
@@ -64,6 +71,7 @@ sudo apt-get remove mypaint
 sudo apt remove zoom_amd64.deb 
 sudo apt remove zoom 
 sudo apt remove --purge google-chrome-stable 
+sudo apt remove microsoft-edge-stable
 sudo snap remove unofficial-webapp-todo
 sudo snap remove office365webdesktop
 sudo snap remove unofficial-webapp-fork
