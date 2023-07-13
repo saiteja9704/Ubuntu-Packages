@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Install required packages
+sudo apt-get install -y apache2 mysql-server php libapache2-mod-php php-mysql php-curl php-zip php-mbstring
+
+# Download and extract ITDB
+wget https://github.com/sivann/itdb/archive/1.23.zip
+unzip 1.23.zip
+sudo mv itdb-1.23 /var/www/html/itdb
+
+# Set ownership and permissions
+sudo chown -R www-data:www-data /var/www/html/itdb
+sudo chmod -R 755 /var/www/html/itdb
+
+# Create and configure MySQL database
+sudo mysql -u root -p << EOF
+CREATE DATABASE itdb;
+CREATE USER 'itdbuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON itdb.* TO 'itdbuser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+EOF
+
+# Configure Apache virtual host
+sudo bash -c 'cat << EOF > /etc/apache2/sites-available/itdb.conf
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/itdb
+    <Directory /var/www/html/itdb/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+EOF'
+
+# Enable the virtual host
+sudo a2ensite itdb.conf
+sudo systemctl restart apache2
+
+# Install required PHP extensions
+echo " http://localhost/itdb "
+echo " Open database Error!: could not find driver - if you face the this error exicut the bolow commands "
+echo " sudo apt-get install -y php-mysql php-pgsql php-sqlite3 "
+echo " sudo systemctl restart apache2 "
+
+
