@@ -69,7 +69,7 @@ if [ $choice -eq 1 ]; then
   sudo apt upgrade -y
 
 elif [ $choice -eq 2 ]; then
- 
+
 # Removal
 sudo apt remove code 
 sudo apt remove gimp 
